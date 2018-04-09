@@ -22,3 +22,6 @@ docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-proxy.log
 docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-query.log
 docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-nxdomain.log
 ```
+
+### Other
+As I use multi-stage build in Docker, you need to build it with Docker 17.05 or higher.
