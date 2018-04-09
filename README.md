@@ -1,7 +1,7 @@
 ## dnscrypt-proxy-docker
 
 ## dnscrypt-proxy-config.sh
-Comes from [CNMan/dnscrypt-proxy-config](https://github.com/CNMan/dnscrypt-proxy-config)
+Thanks to [CNMan/dnscrypt-proxy-config](https://github.com/CNMan/dnscrypt-proxy-config)
 Remove `-N` as wget int golang:1.10-alpine does not have it.
 
 ### Build
