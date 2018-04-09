@@ -13,3 +13,10 @@ docker build -t dnscrypt-proxy-docker:0.1.0 .
 ```
 docker run --name dnscrypt-proxy-docker --restart on-failure -d -p 127.0.0.1:53:53/tcp -p 127.0.0.1:53:53/udp dnscrypt-proxy-docker:0.1.0
 ```
+
+### Logs
+```
+docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-proxy.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-query.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-nxdomain.log
+```
