@@ -13,9 +13,9 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 
 #########
 FROM alpine
+RUN apk add --update ca-certificates
 
 RUN mkdir -p /opt
-
 # Copy config file
 COPY --from=builder /go/dnscrypt-blacklist-domains.txt /opt
 COPY --from=builder /go/dnscrypt-blacklist-ips.txt /opt

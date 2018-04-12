@@ -1,29 +1,26 @@
 ## dnscrypt-proxy-docker
 
-## dnscrypt-proxy-config.sh
-Thanks to [CNMan/dnscrypt-proxy-config](https://github.com/CNMan/dnscrypt-proxy-config)
-
-Just removed `-N` args in `dnscrypt-proxy-config.sh` as `wget` in `golang:1.10-alpine` does not have it.
-
 ### Build
 ```
-docker build -t dnscrypt-proxy-docker:0.1.0 .
+docker build -t dnscrypt-proxy-docker:0.1.1 .
 ```
 
 ### Run
 ```
-docker run -d --name dnscrypt-proxy-docker --restart always -p 127.0.0.1:53:53/tcp -p 127.0.0.1:53:53/udp dnscrypt-proxy-docker:0.1.0
+docker run -d --name dnscrypt-proxy-docker --restart always -p 127.0.0.1:53:53/tcp -p 127.0.0.1:53:53/udp dnscrypt-proxy-docker:0.1.1
 ```
 Then modify your system DNS to 127.0.0.1
 
 ### Image
-If your are not able to build the docker image, use `pikeszfish/dnscrypt-proxy-docker:0.1.0` which I built.
+If your are not able to build the docker image, use `pikeszfish/dnscrypt-proxy-docker:0.1.1` which I built.
 
 ### Logs
 ```
 docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-proxy.log
-docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-query.log
-docker exec -it dnscrypt-proxy-docker tail -f /opt/dnscrypt-nxdomain.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/query.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/nx.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/blocked.log
+docker exec -it dnscrypt-proxy-docker tail -f /opt/ip-blocked.log
 ```
 
 ### Other
