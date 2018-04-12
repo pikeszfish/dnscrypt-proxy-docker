@@ -7,7 +7,12 @@ docker build -t dnscrypt-proxy-docker:0.1.1 .
 
 ### Run
 ```
-docker run -d --name dnscrypt-proxy-docker --restart always -p 127.0.0.1:53:53/tcp -p 127.0.0.1:53:53/udp dnscrypt-proxy-docker:0.1.1
+docker run -d \
+    --name dnscrypt-proxy-docker \
+    --restart always \
+    -p 127.0.0.1:53:53/tcp \
+    -p 127.0.0.1:53:53/udp \
+    dnscrypt-proxy-docker:0.1.1
 ```
 Then modify your system DNS to 127.0.0.1
 
